@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today's Motivational Quote</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .quote-container {
+      text-align: center;
+      padding: 20px;
+    }
+    .quote-text {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .quote-author {
+      font-size: 18px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-container">
+    <div id="quoteText" class="quote-text"></div>
+    <div id="quoteAuthor" class="quote-author"></div>
+  </div>
+
+  <script>
+    const motivationalQuotes = [
+      { text: "QUOTE", author: "AUTHOR" },
+     { text: "QUOTE1", author: "AUTHOR" },
+     { text: "QUOTE2", author: "AUTHOR" },
+     { text: "QUOTE2", author: "AUTHOR" },
+     { text: "QUOTE3", author: "AUTHOR" },
+      { text: "QUOTE4", author: "AUTHOR" }
+    ];
+
+    function displayRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
+      const randomQuote = motivationalQuotes[randomIndex];
+      document.getElementById("quoteText").textContent = `"${randomQuote.text}"`;
+      document.getElementById("quoteAuthor").textContent = `- ${randomQuote.author}`;
+    }
+
+    // Call the function to display the quote when the page loads
+    window.onload = displayRandomQuote;
+  </script>
+</body>
+</html>
